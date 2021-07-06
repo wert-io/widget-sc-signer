@@ -39,6 +39,7 @@ const wertWidget = new WertWidget({
 
 ### Options
 | Property | Required | Type | Description |
+| :--- | :---: | :---: | --- |
 | **address** | required | *String* | User’s address that will act as a fallback address if a smart contract can't be executed. In case of fallback we will transfer commodity_amount to this address |
 | **commodity** | required | *String* | For now it's **ETH** or **XTZ** |
 | **commodity_amount** | required | *Number* | An amount of ETH necessary for executing the given smart contract |
