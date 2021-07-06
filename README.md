@@ -49,4 +49,4 @@ const wertWidget = new WertWidget({
 | **sc_input_data** | required | *String* | Data that will be used for smart contract execution, in the hex format |
 ### Private key
 
-Was given to you during your registration in Wert system as a partner. If you don't have one, [contact us](https://wert.io/for-partners).
+Was given to you during your registration in **Wert** system as a partner. If you don't have one, [contact us](https://wert.io/for-partners).
