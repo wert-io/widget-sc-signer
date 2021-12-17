@@ -41,7 +41,7 @@ const wertWidget = new WertWidget({
 | Property | Required | Type | Description |
 | :--- | :---: | :---: | --- |
 | **address** | required | *String* | User’s address that will act as a fallback address if a smart contract can't be executed. In case of fallback we will transfer commodity_amount to this address |
-| **commodity** | required | *String* | For now it's **ETH** or **XTZ** |
+| **commodity** | required | *String* | [List of supported currencies](https://wert-io.notion.site/Supported-Currencies-8a2a5f6a6ccb49709419793d34d86223) |
 | **commodity_amount** | required | *Number* | An amount of commodity necessary for executing the given smart contract |
 | **pk_id** | required | *String* | ID of the public key that matches your private key |
 | **sc_address** | required | *String* | The address of the smart contract |
