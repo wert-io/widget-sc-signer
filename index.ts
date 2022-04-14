@@ -45,7 +45,11 @@ const signSmartContractData = (options: sc_options, privateKey: string): signed_
   const dataString = Object.keys(options as sc_options)
     .sort()
     .map(key => {
-      const value = String((options as sc_options)[key as keyof sc_options]);
+      let value = String((options as sc_options)[key as keyof sc_options]);
+
+      if (key === 'commodity_amount') {
+        value = String(parseFloat(value));
+      }
 
       return `${key}:${value}`
     })

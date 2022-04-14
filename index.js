@@ -28,7 +28,10 @@ const signSmartContractData = (options, privateKey) => {
     const dataString = Object.keys(options)
         .sort()
         .map(key => {
-        const value = String(options[key]);
+        let value = String(options[key]);
+        if (key === 'commodity_amount') {
+            value = String(parseFloat(value));
+        }
         return `${key}:${value}`;
     })
         .join('\n');
