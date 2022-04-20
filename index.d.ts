@@ -12,5 +12,6 @@ interface signed_sc_options extends sc_options {
 }
 declare const _default: {
     signSmartContractData: (options: sc_options, privateKey: string) => signed_sc_options;
+    scKeysList: string[];
 };
 export = _default;

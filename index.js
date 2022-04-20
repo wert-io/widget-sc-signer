@@ -39,4 +39,8 @@ const signSmartContractData = (options, privateKey) => {
     const signature = ellipticKey.sign(hash).toHex();
     return Object.assign(Object.assign({}, options), { signature });
 };
-module.exports = { signSmartContractData };
+const scKeysList = [
+    ...scRequiredKeys,
+    'signature',
+];
+module.exports = { signSmartContractData, scKeysList };

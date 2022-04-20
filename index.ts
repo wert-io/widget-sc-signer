@@ -62,5 +62,9 @@ const signSmartContractData = (options: sc_options, privateKey: string): signed_
     signature,
   };
 };
+const scKeysList = [
+  ...scRequiredKeys,
+  'signature',
+];
 
-export = { signSmartContractData };
+export = { signSmartContractData, scKeysList };
