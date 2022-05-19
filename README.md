@@ -1,4 +1,4 @@
-# WertWidget Smart Contract Sign Helper
+# WertWidget Smart Contract Signing Helper
 
 ## Installation
 
@@ -28,7 +28,7 @@ import { signSmartContractData } from '@wert-io/widget-sc-signer';
 const signedData = signSmartContractData(options, privateKey);
 ```
 
-Function **signSmartContractData** returns given options object with addition of "**signature**" property. You can pass result directly to [WertWidget initializer](https://www.npmjs.com/package/@wert-io/widget-initializer):
+Function **signSmartContractData** returns the given options object with an addition of a "**signature**" property. You can pass the result directly to [WertWidget initializer](https://www.npmjs.com/package/@wert-io/widget-initializer):
 
 ```javascript
 const wertWidget = new WertWidget({
@@ -40,7 +40,7 @@ const wertWidget = new WertWidget({
 ### Options
 | Property | Required | Type | Description |
 | :--- | :---: | :---: | --- |
-| **address** | required | *String* | User’s address that will act as a fallback address if a smart contract can't be executed. In case of fallback we will transfer commodity_amount to this address |
+| **address** | required | *String* | User’s address that will act as a fallback address if a smart contract can't be executed. In case of fallback, Wert will transfer commodity_amount to this address |
 | **commodity** | required | *String* | [List of supported currencies](https://wert-io.notion.site/Supported-Currencies-8a2a5f6a6ccb49709419793d34d86223) |
 | **commodity_amount** | required | *Number* | An amount of crypto necessary for executing the given smart contract |
 | **pk_id** | required | *String* | ID of the public key that matches your private key |
@@ -49,4 +49,4 @@ const wertWidget = new WertWidget({
 | **sc_input_data** | required | *String* | Data that will be used for smart contract execution, in the hex format |
 ### Private key
 
-Was given to you during your registration in **Wert** system as a partner. If you don't have one, [contact us](https://wert.io/for-partners).
+Was given to you during your registration in the **Wert** system as a partner. If you don't have one, [contact us](https://wert.io/for-partners).
