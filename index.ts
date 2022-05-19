@@ -28,8 +28,8 @@ const ellipticEdDSA = new EdDSA('ed25519');
 const trimHexPrefix = (str: string): string => {
   if (!str) return str;
 
-  if (str.substr(0, 2) === '0x') {
-    return str.substr(2);
+  if (str.substring(0, 2) === '0x') {
+    return str.substring(2);
   }
 
   return str;
