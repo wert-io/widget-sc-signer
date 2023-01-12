@@ -4,9 +4,7 @@ const scRequiredKeys = [
     'address',
     'commodity',
     'commodity_amount',
-    'pk_id',
     'sc_address',
-    'sc_id',
     'sc_input_data',
 ];
 const ellipticEdDSA = new elliptic_1.eddsa('ed25519');
@@ -41,6 +39,7 @@ const signSmartContractData = (options, privateKey) => {
 };
 const scKeysList = [
     ...scRequiredKeys,
+    'network',
     'signature',
 ];
 module.exports = { signSmartContractData, scKeysList };
