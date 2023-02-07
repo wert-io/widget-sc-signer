@@ -1,11 +1,15 @@
 "use strict";
 const elliptic_1 = require("elliptic");
-const scRequiredKeys = [
+const scKeys = [
     'address',
     'commodity',
     'commodity_amount',
+    'network',
     'sc_address',
     'sc_input_data',
+];
+const optionalScKeys = [
+    'network',
 ];
 const ellipticEdDSA = new elliptic_1.eddsa('ed25519');
 const trimHexPrefix = (str) => {
@@ -17,14 +21,14 @@ const trimHexPrefix = (str) => {
     return str;
 };
 const signSmartContractData = (options, privateKey) => {
-    const allKeysProvided = scRequiredKeys.every(key => key in options);
-    if (!allKeysProvided)
-        throw Error(`All of following keys in options (as first argument) are required for signing: ${scRequiredKeys.map(key => `"${key}"`).join(', ')}`);
+    const requiredScKeys = scKeys.filter(key => !optionalScKeys.find(optionalKey => key === optionalKey));
+    const requiredKeysProvided = requiredScKeys.every(key => key in options);
+    if (!requiredKeysProvided)
+        throw Error(`All of following keys in options (as first argument) are required for signing: ${requiredScKeys.map(key => `"${key}"`).join(', ')}`);
     if (!privateKey)
         throw Error(`Private key (as second argument) is required for signing`);
     const ellipticKey = ellipticEdDSA.keyFromSecret(trimHexPrefix(privateKey));
-    const dataString = Object.keys(options)
-        .sort()
+    const dataString = scKeys
         .map(key => {
         let value = String(options[key]);
         if (key === 'commodity_amount') {
@@ -38,8 +42,7 @@ const signSmartContractData = (options, privateKey) => {
     return Object.assign(Object.assign({}, options), { signature });
 };
 const scKeysList = [
-    ...scRequiredKeys,
-    'network',
+    ...scKeys,
     'signature',
 ];
 module.exports = { signSmartContractData, scKeysList };

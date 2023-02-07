@@ -1,8 +1,8 @@
 interface sc_options {
     address: string;
     commodity: string;
-    network?: string;
     commodity_amount: number;
+    network?: string;
     sc_address: string;
     sc_input_data: string;
 }
