@@ -2,7 +2,7 @@ interface sc_options {
     address: string;
     commodity: string;
     commodity_amount: number;
-    network?: string;
+    network: string;
     sc_address: string;
     sc_input_data: string;
 }
