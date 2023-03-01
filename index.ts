@@ -36,8 +36,11 @@ const trimHexPrefix = (str: string): string => {
 const signSmartContractData = (options: sc_options, privateKey: string): signed_sc_options => {
   const requiredKeysProvided = scKeys.every(key => key in (options));
 
+  const unexpectedKeys = Object.keys(options).filter(key => scKeys.includes(key as never));
+
   if (!requiredKeysProvided) throw Error(`All of following keys in options (as first argument) are required for signing: ${scKeys.map(key => `"${key}"`).join(', ')}`);
   if (!privateKey) throw Error(`Private key (as second argument) is required for signing`);
+  if (unexpectedKeys.length) throw Error(`Unexpected keys provided in options: ${unexpectedKeys.map(key => `"${key}"`).join(', ')}`);
 
   const ellipticKey = ellipticEdDSA.keyFromSecret(trimHexPrefix(privateKey));
   const dataString = scKeys
