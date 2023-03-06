@@ -1,6 +1,6 @@
 {
   "name": "@wert-io/widget-sc-signer",
-  "version": "1.0.1-beta.1",
+  "version": "1.0.1-beta.2",
   "description": "WertWidget Smart Contract Sign Helper",
   "main": "index.js",
   "types": "index.d.ts",
