@@ -19,7 +19,7 @@ const trimHexPrefix = (str) => {
 };
 const signSmartContractData = (options, privateKey) => {
     const requiredKeysProvided = scKeys.every(key => key in (options));
-    const unexpectedKeys = Object.keys(options).filter(key => scKeys.includes(key));
+    const unexpectedKeys = Object.keys(options).filter(key => !scKeys.includes(key));
     if (!requiredKeysProvided)
         throw Error(`All of following keys in options (as first argument) are required for signing: ${scKeys.map(key => `"${key}"`).join(', ')}`);
     if (!privateKey)
