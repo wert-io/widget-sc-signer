@@ -38,14 +38,14 @@ const wertWidget = new WertWidget({
 ```
 
 ### Options
-| Property             | Required | Type | Description |
-|:---------------------|:--------:| :---: | --- |
+| Property             | Required |   Type   | Description                                                                                                                                                        |
+|:---------------------|:--------:|:--------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **address**          | required | *String* | User’s address that will act as a fallback address if a smart contract can't be executed. In case of fallback, Wert will transfer commodity_amount to this address |
-| **commodity**        | required | *String* | [List of supported currencies](https://wert-io.notion.site/Supported-Currencies-8a2a5f6a6ccb49709419793d34d86223) |
-| **network**          | optional | *String* | [List of supported currencies](https://wert-io.notion.site/Supported-Currencies-8a2a5f6a6ccb49709419793d34d86223) |
-| **commodity_amount** | required | *Number* | An amount of crypto necessary for executing the given smart contract |
-| **sc_address**       | required | *String* | The address of the smart contract |
-| **sc_input_data**    | required | *String* | Data that will be used for smart contract execution, in the hex format |
+| **commodity**        | required | *String* | [List of supported currencies](https://docs.wert.io/docs/supported-coins-and-blockchains)                                                                          |
+| **network**          | optional | *String* | [List of supported currencies](https://docs.wert.io/docs/supported-coins-and-blockchains)                                                                          |
+| **commodity_amount** | required | *Number* | An amount of crypto necessary for executing the given smart contract                                                                                               |
+| **sc_address**       | required | *String* | The address of the smart contract                                                                                                                                  |
+| **sc_input_data**    | required | *String* | Data that will be used for smart contract execution, in the hex format                                                                                             |
 ### Private key
 
 Was given to you during your registration in the **Wert** system as a partner. If you don't have one, [contact us](https://wert.io/for-partners).
