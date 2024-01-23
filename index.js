@@ -1,5 +1,6 @@
 "use strict";
 const elliptic_1 = require("elliptic");
+const buffer_1 = require("buffer");
 const scKeys = [
     'address',
     'commodity',
@@ -44,7 +45,7 @@ const signSmartContractData = (options, privateKey) => {
         return `${key}:${value}`;
     })
         .join('\n');
-    const hash = Buffer.from(dataString, 'utf8').toString('hex');
+    const hash = buffer_1.Buffer.from(dataString, 'utf8').toString('hex');
     const signature = ellipticKey.sign(hash).toHex();
     return Object.assign(Object.assign({}, options), { signature });
 };
