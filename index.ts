@@ -1,4 +1,5 @@
 import { eddsa as EdDSA } from 'elliptic';
+import { Buffer } from 'buffer';
 
 interface sc_options {
   address: string,

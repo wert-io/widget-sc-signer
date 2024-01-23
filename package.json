@@ -21,6 +21,7 @@
   "homepage": "https://github.com/wert-io/widget-sc-signer#readme",
   "dependencies": {
     "@types/elliptic": "^6.4.12",
+    "buffer": "^6.0.3",
     "elliptic": "^6.5.4"
   },
   "devDependencies": {
